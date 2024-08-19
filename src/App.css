@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes gradientAnimation {
+  0% {
+    background-position: 30% 30%;
+  }
+  50% {
+    background-position: 40% 40%;
+  }
+  100% {
+    background-position: 30% 30%;
   }
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-.App-header {
-  background-color: #282c34;
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: radial-gradient(circle at 30% 30%, #363a6d, #0f0f1f 60%);
+  background-size: 150% 150%;
+  animation: gradientAnimation 10s ease infinite;  background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  color: #c9d1d9;
+  /* Couleurs à choisir */
+  /* 1. Nuances de Bleu Foncé et Violet */
+  /* background: radial-gradient(circle at 30% 30%, #2a2d4d, #0e0f1f 60%); */
+  /* 2. Bleu et Violet Néon */
+  /* background: radial-gradient(circle at 30% 30%, #3b3d6d, #1b193a 60%); */
+  /* 3. Bleu Clair et Bleu Profond */
+  /* background: radial-gradient(circle at 30% 30%, #4a4d7a, #1a1b2e 60%); */
+  /* 4. Violet Magenta et Bleu Profond */
+  /* background: radial-gradient(circle at 30% 30%, #5e3e9c, #1e2238 60%); */
+  /* 5. Bleu Glacier et Bleu Nuit */
+  /* background: radial-gradient(circle at 30% 30%, #5068a9, #13172b 60%); */
+  /* 6. Bleu Arctique et Violet */
+  /* background: radial-gradient(circle at 30% 30%, #6477c9, #221b3a 60%); */
+  /* 7. Bleu Électrique et Bleu Nuit */
+  /* background: radial-gradient(circle at 30% 30%, #5271ff, #1d1b3b 60%); */
+  /* 8. Indigo Foncé et Noir Charbon */
+  /* background: radial-gradient(circle at 30% 30%, #363a6d, #0f0f1f 60%); */
+
+}
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+/* Sphères sur tout le site */
+.background-spheres {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.sphere {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  animation: float 15s ease-in-out infinite;
+  opacity: 0.8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Réduire la taille des sphères */
+.sphere-1 {
+  width: 150px;
+  height: 150px;
+  top: 10%;
+  left: 10%;
+  animation-duration: 12s;
+  animation-direction: alternate;
+}
+
+.sphere-2 {
+  width: 200px;
+  height: 200px;
+  top: 40%;
+  right: 15%;
+  animation-duration: 14s;
+  animation-direction: alternate-reverse;
+}
+
+.sphere-3 {
+  width: 100px;
+  height: 100px;
+  top: 70%;
+  left: 20%;
+  animation-duration: 18s;
+  animation-direction: alternate;
+}
+
+.sphere-4 {
+  width: 180px;
+  height: 180px;
+  bottom: 10%;
+  right: 25%;
+  animation-duration: 20s;
+  animation-direction: alternate-reverse;
+}
+
+.sphere-5 {
+  width: 120px;
+  height: 120px;
+  top: 30%;
+  left: 50%;
+  animation-duration: 16s;
+  animation-direction: alternate;
+}
+
+.sphere-6 {
+  width: 90px;
+  height: 90px;
+  bottom: 20%;
+  right: 5%;
+  animation-duration: 13s;
+  animation-direction: alternate-reverse;
+}
+
+/* Ajout de nouvelles sphères plus petites */
+.sphere-7 {
+  width: 70px;
+  height: 70px;
+  top: 80%;
+  left: 80%;
+  animation-duration: 22s;
+  animation-direction: alternate;
+}
+
+.sphere-8 {
+  width: 110px;
+  height: 110px;
+  bottom: 30%;
+  right: 50%;
+  animation-duration: 19s;
+  animation-direction: alternate-reverse;
+}
+
+/* Animation flottante modifiée pour plus de variabilité */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-20px) translateX(20px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
   }
 }

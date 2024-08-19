@@ -1,0 +1,11 @@
+/* Style pour le bouton de fermeture de la sidebar */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #FFFFFF;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
