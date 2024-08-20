@@ -1,146 +1,80 @@
-/* Banner Section */
+/* Général pour la bannière */
 .banner {
-    margin-top: 80px;
-    height: calc(100vh - 80px);
-    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    position: relative;
-    text-align: center;
-    overflow: hidden;
+    justify-content: flex-start;
+    height: 100vh;
+    background-color: #0a192f;
+    padding-left: 10%; /* Ajuster selon votre préférence */
+    color: #ccd6f6;
+    font-family: 'Montserrat', sans-serif;
 }
 
+/* Contenu de la bannière */
 .banner-content {
-    z-index: 1;
+    max-width: 700px;
+    padding: 0 20px;
 }
 
 .banner-title {
-    font-size: 5em;
-    color: #fff;
-    font-weight: bold;
+    font-size: 4.5rem;
     margin: 0;
+    line-height: 1.2;
+    font-weight: bold;
+    color: #64ffda; /* La couleur verte */
 }
 
 .banner-subtitle {
-    font-size: 1.2em;
-    color: #fff;
-    margin-top: 10px;
-    letter-spacing: 1px;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #8892b0;
 }
 
-/* Formes géométriques flottantes réparties */
-.geometric-shapes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    overflow: hidden;
+/* Icônes sociales */
+.banner-icons {
+    display: flex;
+    margin-top: 30px;
 }
 
-/* Ajout de différentes tailles, positions et couleurs sombres aux cercles */
-.shape {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.1);
-    opacity: 0.8;
-    animation: float 10s infinite ease-in-out;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre subtile */
+.banner-icons a {
+    margin-right: 20px;
+    font-size: 2rem;
+    color: #8892b0;
+    transition: color 0.3s ease;
 }
 
-/* Chaque cercle avec des tailles, positions et couleurs variées et sombres */
-.shape:nth-child(1) {
-    width: 200px;
-    height: 200px;
-    top: 5%; /* Position plus haute */
-    left: 10%; /* Décalage sur la gauche */
-    background-color: rgba(40, 40, 40, 0.9);
-    animation-duration: 15s;
+.banner-icons a:hover {
+    color: #64ffda;
 }
 
-.shape:nth-child(2) {
-    width: 150px;
-    height: 150px;
-    top: 30%; /* Plus bas sur la bannière */
-    left: 70%; /* À droite */
-    background-color: rgba(30, 30, 30, 0.8);
-    animation-duration: 12s;
-}
-
-.shape:nth-child(3) {
-    width: 250px;
-    height: 250px;
-    top: 60%; /* Plus bas */
-    left: 20%; /* À gauche */
-    background-color: rgba(60, 60, 60, 0.7);
-    animation-duration: 18s;
-}
-
-.shape:nth-child(4) {
-    width: 180px;
-    height: 180px;
-    top: 80%; /* Plus près du bas */
-    left: 80%; /* À droite */
-    background-color: rgba(50, 50, 50, 0.8);
-    animation-duration: 20s;
-}
-
-.shape:nth-child(5) {
-    width: 220px;
-    height: 220px;
-    top: 40%; /* Plus centré verticalement */
-    left: 50%; /* Centré horizontalement */
-    background-color: rgba(70, 70, 70, 0.6);
-    animation-duration: 16s;
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0) translateX(0);
-    }
-    50% {
-        transform: translateY(-25px) translateX(15px);
-    }
-    100% {
-        transform: translateY(0) translateX(0);
-    }
-}
-
-/* Scroll Icon */
-/* Scroll Icon */
+/* Scroll icon au centre bas */
 .scroll-icon {
     position: absolute;
     bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     height: 40px;
     width: 40px;
-    border: 2px solid rgba(255, 255, 255, 0.8); /* Légèrement transparent pour un effet subtil */
+    border: 2px solid rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre pour un effet de profondeur */
     cursor: pointer;
 }
 
-/* Effet au survol (hover) */
 .scroll-icon:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    transform: translateY(-3px); /* Petit effet de levitation au survol */
-    border-color: #5e3e9c; /* Changement de la couleur de bordure au survol */
+    transform: translate(-50%, -3px);
 }
 
 .scroll-icon span {
     width: 4px;
     height: 12px;
-    background-color: rgba(255, 255, 255, 0.8); /* Transparence pour une animation plus douce */
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 2px;
     display: inline-block;
-    animation: scroll 1.5s infinite ease-in-out; /* Animation plus fluide */
+    animation: scroll 1.5s infinite ease-in-out;
 }
 
 @keyframes scroll {
@@ -150,6 +84,27 @@
     }
     100% {
         opacity: 0;
-        transform: translateY(10px); /* Ajustement de la distance */
+        transform: translateY(10px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .banner {
+        justify-content: center;
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .banner-title {
+        font-size: 3rem;
+    }
+
+    .banner-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .banner-icons {
+        justify-content: center;
     }
 }

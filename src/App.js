@@ -26,24 +26,11 @@ function App() {
     return (
         <Router>
             <div className="app-container">
-            <div className="background-spheres">
-            <div className="sphere sphere-1"></div>
-            <div className="sphere sphere-2"></div>
-            <div className="sphere sphere-3"></div>
-            <div className="sphere sphere-4"></div>
-            <div className="sphere sphere-5"></div>
-            <div className="sphere sphere-6"></div>
-            <div className="sphere sphere-7"></div>
-            <div className="sphere sphere-8"></div>
-      </div>
                 <Header />
                 <main className="main-content">
                     <Banner />
                     <Skills />
                     <Projects />
-                    {/* <Routes>
-                        <Route path="/about" element={} />
-                    </Routes> */}
                 </main>
             </div>
         </Router>
